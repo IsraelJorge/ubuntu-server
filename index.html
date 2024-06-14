@@ -1,0 +1,196 @@
+<h1>1. Instalação</h1>
+
+<img src="assets/ubunto-server.jpg" />
+
+<h1>1.1 Introdução</h1>
+
+<p>
+  O Ubuntu Server é uma das distribuições Linux mais populares e amplamente
+  utilizadas no ambiente de servidores. Desenvolvido pela Canonical Ltd., ele é
+  uma versão do sistema operacional Ubuntu otimizada para operação em
+  servidores, oferecendo uma plataforma robusta, segura e de alto desempenho
+  para a hospedagem de websites, aplicativos, bancos de dados, e diversos
+  serviços de rede.
+</p>
+
+<h1>1.2 Baixar o .iso</h1>
+
+<p>
+  Acesse o <a href="https://ubuntu.com/download/server">site oficial</a> do
+  Ubuntu Server e faça o download do arquivo <code>.iso</code> em seu
+  computador.
+</p>
+
+<img src="assets/imagem-1.png" />
+
+<p>
+  Espere até que o download seja finalizado para continuar com a instalação.
+</p>
+
+<h1>1.3 Criando a máquina virtual no VirtualBox</h1>
+
+<p>
+  Neste estágio, vamos criar e configurar nossa máquina virtual utilizando o
+  VirtualBox.
+</p>
+
+<p>
+  Esta é a tela principal do VM VirtualBox. Para adicionar uma nova máquina
+  virtual, em <code>“Máquina”</code> após clique no botão <code>"Novo"</code>.
+</p>
+
+<img src="assets/imagem-2.png" />
+
+<p>
+  Nesta etapa, você precisará selecionar um nome para sua máquina, definir a
+  pasta onde ela será armazenada e escolher o arquivo <code>.iso</code>. Esse
+  arquivo <code>.iso</code>
+  foi baixado do site oficial e está na sua pasta de Downloads, a menos que você
+  o tenha movido para outro local.
+</p>
+
+<img src="assets/imagem-3.png" />
+
+<p>
+  Na próxima etapa, as opções de usuário e senha vêm preenchidas por padrão.
+  Escolha um nome para seu servidor e clique em "Próximo".
+</p>
+
+<img src="assets/imagem-4.png" />
+
+<p>
+  Nesta fase, apresentamos as informações de hardware da máquina virtual. Você
+  deve ajustar as configurações conforme as limitações do seu computador. No meu
+  caso, estou utilizando 6 GB de memória e 5 núcleos do processador. Clique em
+  "Próximo" para continuar.
+</p>
+
+<img src="assets/imagem-5.png" />
+
+<p>
+  Aqui, você escolhe o tamanho do disco para a sua máquina virtual. Mais uma
+  vez, a seleção deve levar em conta as limitações do seu computador. No meu
+  caso, estou optando por um tamanho de "até" 25 GB.
+</p>
+
+<img src="assets/imagem-6.png" />
+
+<p>
+  Aqui está um resumo da máquina virtual que acabamos de criar. Clique em
+  "Finalizar" para concluir.
+</p>
+
+<img src="assets/imagem-7.png" />
+
+<h1>1.4 Instalação do Ubuntu Server 24.04</h1>
+
+<p>
+  Agora que a máquina virtual foi criada, vamos iniciar a instalação do Ubuntu
+  Server 24.04.
+</p>
+
+<p>
+  Você pode considerar desconectar sua internet para agilizar a instalação, mas
+  isso é opcional. Eu farei a instalação com minha conexão ativa.
+</p>
+
+<p>
+  Para começar, selecione o idioma utilizando as teclas de seta para cima e para
+  baixo para navegar pelas opções disponíveis. Após fazer sua escolha, pressione
+  a tecla "Enter" para confirmar e avançar com a instalação.
+</p>
+
+<img src="assets/imagem-8.png" />
+
+<p>Escolha o idioma do teclado, clique "Concluído" para prosseguir.</p>
+
+<img src="assets/imagem-9.png" />
+
+<p>
+  Aqui temos o tipo de instalação, escolha a "Ubuntu Server" e clique em
+  “Concluído”.
+</p>
+
+<img src="assets/imagem-10.png" />
+
+<p>
+  Neste estágio, as informações de rede são automaticamente obtidas assim que
+  você estiver conectado à internet. No entanto, se você estiver sem conexão,
+  basta clicar em "Continuar sem rede" para prosseguir.
+</p>
+
+<img src="assets/imagem-11.png" />
+
+<p>
+  Como não vamos fazer configurações de proxy no momento, pularemos esta parte,
+  clique em "Concluído".
+</p>
+
+<img src="assets/imagem-12.png" />
+
+<p>Também não faremos alterações aqui, "Concluído".</p>
+
+<img src="assets/imagem-13.png" />
+
+<p>Mais uma vez, clique em "Concluído".</p>
+
+<img src="assets/imagem-14.png" />
+
+<p>
+  Nesta etapa são configurações de disco, as quais não faremos alterações,
+  clique em "Concluído".
+</p>
+
+<img src="assets/imagem-15.png" />
+
+<p>
+  Aqui você é perguntado se está certo das suas configurações e deseja
+  continuar, clique em "Continue".
+</p>
+
+<img src="assets/imagem-16.png" />
+
+<p>
+  Nesta parte você preencherá os campos com seu nome, nome do servidor, nome de
+  utilizador (login) e uma senha.
+</p>
+
+<img src="assets/imagem-17.png" />
+
+<p>
+  Aqui você é perguntado se deseja fazer update para o Ubuntu Pro, porém
+  continuaremos com a versão normal, mantenha a opção "skip for now" selecionada
+  e clique em "Continue".
+</p>
+
+<img src="assets/imagem-18.png" />
+
+<p>
+  Neste ponto, ele verifica se você quer instalar o serviço SSH. Como vamos
+  fazer isso mais tarde, mantenha essa opção desativada e clique em "Concluído".
+</p>
+
+<img src="assets/imagem-19.png" />
+
+<p>
+  Aqui, na janela de instalação, você encontrará os pacotes populares do Ubuntu.
+  Embora não tenhamos planos de usá-los agora, basta clicar em "Concluído".
+</p>
+
+<img src="assets/imagem-20.png" />
+
+<p>Nesse momento a instalação está em andamento, aguarde...</p>
+
+<img src="assets/imagem-21.png" />
+
+<p>Instalação concluída!</p>
+
+<img src="assets/imagem-22.png" />
+
+<p>
+  Pronto! A instalação foi concluída e o servidor está pronto para as próximas
+  etapas, basta acessá-lo com o usuário e senha que foram adicionados nas etapas
+  anteriores .
+</p>
+
+<img src="assets/imagem-23.png" />
