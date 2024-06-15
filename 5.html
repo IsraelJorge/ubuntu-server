@@ -1,0 +1,138 @@
+<p>
+  O ProFTPD (Professional FTP Daemon) é um servidor FTP altamente configurável e
+  eficiente, amplamente utilizado em sistemas Unix e similares, incluindo Linux.
+  Este servidor foi desenvolvido com foco em segurança, desempenho e
+  flexibilidade, tornando-se uma escolha popular para administradores de
+  sistemas e provedores de serviços de internet (ISPs) que necessitam de um
+  servidor FTP robusto e confiável.
+</p>
+
+<h1>5.1 Instalação</h1>
+
+<p>
+  Primeiramente, você deve acessar seu servidor com privilégios de superusuário.
+  Depois, utilize o comando apt para instalar o pacote ProFTPD e sua
+  documentação.
+</p>
+
+<pre>
+    sudo su
+    apt install proftpd proftpd-doc
+</pre>
+
+<h1>5.2 Configurando o ProFTPD</h1>
+<p>1 - Navegue até o diretório de configuração do ProFTPD:</p>
+
+<pre>  cd /etc/proftpd</pre>
+
+<p>2 - Faça um cópia de segurança do arquivo de configuração padrão:</p>
+
+<pre>  cp proftpd.conf proftpd.conf.backup</pre>
+
+<p>3 - Edite o arquivo de configuração do ProFTPD:</p>
+
+<pre>  nano proftpd.conf</pre>
+
+<p>Dentro do arquivo, altere as seguintes configurações:</p>
+
+<img
+  src="https://github.com/IsraelJorge/ubuntu-server/blob/main/assets/imagem-34.png"
+  width="80%"
+/>
+
+<p>Configurações feitas:</p>
+
+<ul>
+  <li>
+    <code>UseIPv6 off</code>: Desligue o suporte a IPv6 para simplificar a
+    configuração do sistema.
+  </li>
+  <li>
+    <code>ServerName "israel-server"</code>: Especifique o nome do servidor FTP,
+    substituindo "israel-server" pelo nome desejado.
+  </li>
+  <li>
+    <code>DefaultRoot ~</code>: Defina o diretório raiz padrão para os usuários
+    FTP, restringindo o acesso apenas a esse diretório.
+  </li>
+  <li>
+    <code>RequireValidShell off</code>: Permita que usuários com shells
+    inválidos se conectem, útil para usuários FTP que não necessitam de acesso
+    ao shell.
+  </li>
+  <li>
+    <code>MaxInstances 2</code>: Limite o número de conexões simultâneas a 2
+    (ajuste este valor conforme necessário).
+  </li>
+</ul>
+
+<h1>5.3 Adicionando um usuário</h1>
+
+<p>Vamos adicionar um novo usuário FTP utilizando o comando:</p>
+
+<pre>   sudo adduser user1</pre>
+
+<h1>5.4 Adicionando uma pasta para o usuário</h1>
+
+<p>
+  Vamos acessar o diretório do novo usuário e configurar uma pasta específica
+  para FTP.
+</p>
+
+<pre>
+    cd /home/user1
+    mkdir ftp
+</pre>
+
+<p>
+  Vamos modificar o arquivo <code>/etc/passwd</code> para definir o diretório
+  FTP e impedir o login do usuário.
+</p>
+
+<pre>  nano /etc/passwd</pre>
+
+<p>
+  Encontre a linha correspondente ao usuário <strong>user1</strong> e
+  modifique-a para:
+</p>
+
+<pre>   user1:x:1001:1001:Usuario FTP 01,,,:/home/user1/ftp:/bin/nologin</pre>
+
+<p>Ajuste as permissões da pasta ftp:</p>
+
+<pre>
+    chown user1:user1 ftp
+    chmod 770 ftp
+</pre>
+
+<h1>5.5 Reiniciando o ProFTPD</h1>
+
+<p>
+  Depois de realizar todas as configurações, é necessário reiniciar o ProFTPD
+  para que as alterações entrem em vigor.
+</p>
+
+<pre>systemctl restart proftpd</pre>
+
+<p>
+  Verifique o status do ProFTPD para garantir que esteja funcionando
+  corretamente:
+</p>
+
+<pre>systemctl status proftpd</pre>
+
+<h1>5.6 Testando a Configuração</h1>
+
+<p>Vamos criar alguns arquivos de teste no diretório FTP:</p>
+
+<pre>
+    touch ftp/naruto.mov
+    touch ftp/lobo-pidao.jpg
+</pre>
+
+<p>
+  Ao seguir estes passos, você terá instalado e configurado o servidor FTP
+  ProFTPD no seu Ubuntu Server. Essas configurações iniciais asseguram que o
+  servidor esteja preparado para realizar transferências de arquivos de maneira
+  segura e eficiente.
+</p>
